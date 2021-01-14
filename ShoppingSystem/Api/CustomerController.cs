@@ -38,17 +38,10 @@ namespace ShoppingSystem.Api
         [HttpGet("{id}")]
         public async Task<ActionResult<Customer>> GetCustomer(int id)
         {
-            try
-            {
-                var customer = await _customers.GetByIdAsync(id);
+            var customer = await _customers.GetByIdAsync(id);
+                if (customer == null)
+                    return NotFound();
                 return customer;
-            }
-            catch(Exception)
-            {
-                return NotFound();
-            }
-
-            
         }
 
         // PUT: api/Customer/5

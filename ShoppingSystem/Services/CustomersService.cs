@@ -27,11 +27,7 @@ namespace ShoppingSystem.Services
 
         public async Task DeleteAsync(int id)
         {
-            var customer = await _dbContext.Customers.FindAsync(id);
-             if (customer == null)
-             {
-                 throw new Exception("Nothing found");
-             }
+            var customer = await GetByIdAsync(id);
              _dbContext.Customers.Remove(customer);
              await _dbContext.SaveChangesAsync();
         }

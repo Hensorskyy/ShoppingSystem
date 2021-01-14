@@ -110,7 +110,7 @@ namespace ShoppingSystemTests
             var dbSet = CreateDbSet();
             var dbContext = CreateDbContext(dbSet);
             var service = new CustomersService(dbContext.Object);
-            int idToDelete = 1;
+            int idToDelete = 3;
             await service.DeleteAsync(idToDelete);
 
             dbSet.Verify(x => x.Remove(It.IsAny<Customer>()), Times.Once());

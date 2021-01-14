@@ -56,8 +56,7 @@ namespace ShoppingSystem.Tests.Controllers
         [TestCase(5)]
         public async Task GetById_UnknownIdPassed_ReturnsNotFoundResult(int id)
         {
-            _mockCustomerService.Setup(service => service.GetByIdAsync(id))
-                .ReturnsAsync((Customer)null);
+            _mockCustomerService.Setup(m => m.GetByIdAsync(id)).ReturnsAsync((Customer)null);
 
             var result = await _customerApiController.GetCustomer(id);
 
