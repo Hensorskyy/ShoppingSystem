@@ -63,28 +63,6 @@ namespace ShoppingSystem.Tests.Controllers
 
             Assert.IsInstanceOf<NotFoundResult>(result.Result);
         }
-        //[Fact]
-        //public void GetById_ExistingGuidPassed_ReturnsOkResult()
-        //{
-        //    // Arrange
-        //    var testGuid = new Guid("ab2bd817-98cd-4cf3-a80a-53ea0cd9c200");
-        //    // Act
-        //    var okResult = _controller.Get(testGuid);
-        //    // Assert
-        //    Assert.IsType<OkObjectResult>(okResult.Result);
-        //}
-        //[Fact]
-        //public void GetById_ExistingGuidPassed_ReturnsRightItem()
-        //{
-        //    // Arrange
-        //    var testGuid = new Guid("ab2bd817-98cd-4cf3-a80a-53ea0cd9c200");
-        //    // Act
-        //    var okResult = _controller.Get(testGuid).Result as OkObjectResult;
-        //    // Assert
-        //    Assert.IsType<ShoppingItem>(okResult.Value);
-        //    Assert.Equal(testGuid, (okResult.Value as ShoppingItem).Id);
-        //}
-
 
         #endregion
     }

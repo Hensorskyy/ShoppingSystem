@@ -22,6 +22,9 @@ namespace ShoppingSystem.Api
         }
 
         // GET: api/Customers
+        /// <summary>
+        /// Gets all customer from database.
+        /// </summary>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Customer>>> GetAllCustomers()
         {
@@ -29,6 +32,9 @@ namespace ShoppingSystem.Api
         }
 
         // GET: api/Customers/5
+        /// <summary>
+        /// Get a customer by passed id.
+        /// </summary>
         [HttpGet("{id}")]
         public async Task<ActionResult<Customer>> GetCustomer(int id)
         {
@@ -48,6 +54,9 @@ namespace ShoppingSystem.Api
         // PUT: api/Customer/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
+        /// <summary>
+        /// Updates customer by id.
+        /// </summary>
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateCustomer(int id, Customer customer)
         {
@@ -70,6 +79,27 @@ namespace ShoppingSystem.Api
         // POST: api/Products
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
+        /// <summary>
+        /// Adds new customer to database.
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     POST /AddCustomer
+        ///     {
+        ///        "FirstName": "Name",
+        ///        "LastName": "SurName",
+        ///        "Address": "Lviv",
+        ///        "Discount": "10"
+        ///     }
+        ///
+        /// </remarks>
+        /// <returns>A newly created customer</returns>
+        /// <response code="201">Returns the newly created customer</response>
+        /// <response code="400">If the item is null</response>            
+        [HttpPost]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [HttpPost]
         public async Task<ActionResult<Customer>> AddCustomer(Customer customer)
         {
@@ -79,6 +109,9 @@ namespace ShoppingSystem.Api
         }
 
         // DELETE: api/Products/5
+        /// <summary>
+        /// Removes a customer from database.
+        /// </summary>
         [HttpDelete("{id}")]
         public async Task<ActionResult<Customer>> DeleteCustomer(int id)
         {
