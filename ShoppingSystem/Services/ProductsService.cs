@@ -28,11 +28,12 @@ namespace ShoppingSystem.Services
 
         public async Task DeleteAsync(int id)
         {
-            if (!(_dbContext.Products.Any(p => p.Id == id)))
+            var product = await _dbContext.Products.FindAsync(id);
+            if (product == null)
             {
                 throw new Exception("Nothing found");
             }
-            _dbContext.Products.Remove(new Product { Id = id });
+            _dbContext.Products.Remove(product);
             await _dbContext.SaveChangesAsync();
         }
 

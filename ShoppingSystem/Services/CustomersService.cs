@@ -27,12 +27,13 @@ namespace ShoppingSystem.Services
 
         public async Task DeleteAsync(int id)
         {
-            if (!(_dbContext.Customers.Any(s => s.Id == id)))
-            {
-                throw new Exception("On this Id nothing found");
-            }
-            _dbContext.Customers.Remove(new Customer { Id = id });
-             _dbContext.SaveChangesAsync();
+            var customer = await _dbContext.Customers.FindAsync(id);
+             if (customer == null)
+             {
+                 throw new Exception("Nothing found");
+             }
+             _dbContext.Customers.Remove(customer);
+             await _dbContext.SaveChangesAsync();
         }
 
         public async Task EditAsync(Customer model)

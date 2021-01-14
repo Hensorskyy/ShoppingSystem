@@ -1,3 +1,5 @@
+using Newtonsoft.Json;
+
 namespace ShoppingSystem.Models
 {
     public class Product

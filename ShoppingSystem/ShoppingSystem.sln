@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShoppingSystem", "ShoppingSystem.csproj", "{AB736F75-1093-447C-8C47-543D9A0A89D3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShoppingSystemTests", "..\ShoppingSystemTests\ShoppingSystemTests.csproj", "{D583937F-820D-4A82-BFE6-EF6CEB2EA2A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShoppingSystem.Tests.Services", "..\ShoppingSystemTests\ShoppingSystem.Tests.Services.csproj", "{D583937F-820D-4A82-BFE6-EF6CEB2EA2A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingSystem.Tests.Controllers", "..\ShoppingSystem.Tests.Controllers\ShoppingSystem.Tests.Controllers.csproj", "{3CFDBD7D-DE89-4F41-8EB3-1BCD52EA1805}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShoppingSystem.Tests.Controllers", "..\ShoppingSystem.Tests.Controllers\ShoppingSystem.Tests.Controllers.csproj", "{3CFDBD7D-DE89-4F41-8EB3-1BCD52EA1805}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
