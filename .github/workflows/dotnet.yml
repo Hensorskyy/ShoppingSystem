@@ -23,20 +23,23 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: '3.1.x'
-    
+      
+    - name: xml-replace-action
+      uses: rvolo/xml-replace-action@v0.3
+      with:
+        filepath: '${{ github.workspace }}/Benday.Demo123'
+        xpath: '/Project/PropertyGroup/Version/text()'
+        replace: GITHUB_RUN_NUMBER
         
     - name: Restore dependencies
-      run: dotnet restore
-      
-    - name: Run a one-line script
-      run: ./build/build.ps1 --no-restore
-      shell: powershell
-      
+      run: dotnet restore ./ShoppingSystem/
+               
     - name: Build
-      run: dotnet build --no-restore
+      run: dotnet build --configuration Release --no-restore ./ShoppingSystem/
       
     - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test --no-restore --no-build --configuration Release ./ShoppingSystem/
+      
     - name: Publish Unit Test Results
       uses: EnricoMi/publish-unit-test-result-action/composite@v1
       if: always()
