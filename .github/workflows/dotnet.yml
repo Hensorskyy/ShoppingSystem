@@ -30,6 +30,13 @@ jobs:
         filepath: '${{ github.workspace}}/.github/workflows/test.xml'
         xpath: '/Project/PropertyGroup/Version/text()'
         replace: GITHUB_RUN_NUMBER
+    
+    - name: Get XML
+      id: getxml
+      uses: mavrosxristoforos/get-xml-info@1.0
+      with:
+        xml-file: '${{ github.workspace}}/.github/workflows/test.xml'
+        xpath: '//project'
         
     - name: Restore dependencies
       run: dotnet restore ./ShoppingSystem/
