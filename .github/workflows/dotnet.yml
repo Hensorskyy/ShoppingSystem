@@ -36,7 +36,7 @@ jobs:
       uses: mavrosxristoforos/get-xml-info@1.0
       with:
         xml-file: '.github/workflows/test.xml'
-        xpath: '//project'
+        xpath: '//Project'
         
     - name: Restore dependencies
       run: dotnet restore ./ShoppingSystem/
