@@ -35,7 +35,7 @@ jobs:
       id: getxml
       uses: mavrosxristoforos/get-xml-info@1.0
       with:
-        xml-file: '${{ github.workspace}}/.github/workflows/test.xml'
+        xml-file: '.github/workflows/test.xml'
         xpath: '//project'
         
     - name: Restore dependencies
