@@ -27,14 +27,14 @@ jobs:
     - name: xml-replace-action
       uses: rvolo/xml-replace-action@v0.3
       with:
-        filepath: '../ShoppingSystem/*.csproj'
+        filepath: '../../ShoppingSystem/*.csproj'
         xpath: '/Project/PropertyGroup/Version/text()'
         replace: GITHUB_RUN_NUMBER 
     
     - name: YAML/JSON/XML Converter Action
       uses: fabasoad/yaml-json-xml-converter-action@v1.0.11
       with:
-        path: '../ShoppingSystem/*.csproj'
+        path: '../../ShoppingSystem/*.csproj'
         from: xml
         to: json
         
