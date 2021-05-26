@@ -45,7 +45,7 @@ jobs:
       run: dotnet test --logger:"junit;LogFilePath=..\artifacts\{assembly}-test-result.xml" --configuration Release ./ShoppingSystem/
       
     - name: Publish Test Report
-      uses: EnricoMi/publish-unit-test-result-action@v1
+      uses: EnricoMi/publish-unit-test-result-action/composite@v1
       if: always()
       with:
         files: .\artifacts\*test-result.xml
