@@ -42,7 +42,7 @@ jobs:
     #  shell: powershell
     
     - name: Test
-      run: dotnet test --test-adapter-path:. --logger:"junit;LogFilePath=..\artifacts\{assembly}-test-result.xml;MethodFormat=Class;FailureBodyFormat=Verbose" --configuration Release ./ShoppingSystem/
+      run: dotnet test --logger:"junit;LogFilePath=..\artifacts\{assembly}-test-result.xml" --configuration Release ./ShoppingSystem/
       
     - name: Publish Unit Test Results
       uses: EnricoMi/publish-unit-test-result-action/composite@v1
