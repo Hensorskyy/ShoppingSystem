@@ -30,13 +30,6 @@ jobs:
         filepath: '${{ github.workspace}}/.github/workflows/test.xml'
         xpath: '/Project/PropertyGroup/Version/text()'
         replace: GITHUB_RUN_NUMBER
-    
-    - name: Get XML
-      id: getxml
-      uses: mavrosxristoforos/get-xml-info@1.0
-      with:
-        xml-file: '.github/workflows/test.xml'
-        xpath: '//Project/PropertyGroup/Version'
         
     - name: Restore dependencies
       run: dotnet restore ./ShoppingSystem/
@@ -55,11 +48,11 @@ jobs:
         
     - uses: papeloto/action-zip@v1
       with:
-        files: dist/ manifest.json
+        files: .github/workflows/test.xml
         dest: result.zip
         
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.2.3
       with:
         name: myartifact
-        path: path/to/artifact/world.txt
+        path: ${{ github.workspace }}/result.zip
