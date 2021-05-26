@@ -36,7 +36,11 @@ jobs:
                
     - name: Build
       run: dotnet build --configuration Release --no-restore ./ShoppingSystem/
-      
+    
+    #- name: Run a one-line script
+    # run: ./build/build.ps1 --no-restore
+    #  shell: powershell
+    
     #- name: Test
     #  run: dotnet test --no-restore --no-build --logger 'junit;LogFilePath=.github/workflows/testresult.xml' --configuration Release ./ShoppingSystem/
       
