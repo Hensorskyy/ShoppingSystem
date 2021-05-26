@@ -37,8 +37,8 @@ jobs:
     - name: Build
       run: dotnet build --configuration Release --no-restore ./ShoppingSystem/
       
-    - name: Test
-      run: dotnet test --no-restore --no-build --logger 'junit;LogFilePath=.github/workflows/testresult.xml' --configuration Release ./ShoppingSystem/
+    #- name: Test
+    #  run: dotnet test --no-restore --no-build --logger 'junit;LogFilePath=.github/workflows/testresult.xml' --configuration Release ./ShoppingSystem/
       
     - name: Publish Unit Test Results
       uses: EnricoMi/publish-unit-test-result-action/composite@v1
@@ -48,7 +48,7 @@ jobs:
         
     - uses: papeloto/action-zip@v1
       with:
-        files: .github/workflows/test.xml
+        files: .github/workflows
         dest: result.zip
         
     - name: Upload a Build Artifact
