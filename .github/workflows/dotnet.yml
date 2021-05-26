@@ -44,11 +44,10 @@ jobs:
     - name: Test
       run: dotnet test --logger:"junit;LogFilePath=..\artifacts\{assembly}-test-result.xml" --configuration Release ./ShoppingSystem/
       
-    - name: Publish Unit Test Results
-      uses: EnricoMi/publish-unit-test-result-action/composite@v1
-      if: always()
+    - name: Publish Test Report
+      uses: mikepenz/action-junit-report@v2
       with:
-        files: .\artifacts\*test-result.xml
+        report_paths: .\artifacts\*test-result.xml
     
     - name: Create zip file    
       uses: papeloto/action-zip@v1
