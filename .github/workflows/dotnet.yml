@@ -29,7 +29,7 @@ jobs:
       with:
         filepath: '${{ github.workspace}}/.github/workflows/test.xml'
         xpath: '/Project/PropertyGroup/Version/text()'
-        replace: GITHUB_RUN_NUMBER
+        replace: '${{ github.run_number}}'
         
     - name: Restore dependencies
       run: dotnet restore ./ShoppingSystem/
