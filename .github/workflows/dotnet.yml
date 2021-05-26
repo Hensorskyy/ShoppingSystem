@@ -38,7 +38,7 @@ jobs:
       run: dotnet build --configuration Release --no-restore ./ShoppingSystem/
       
     - name: Test
-      run: dotnet test --no-restore --no-build --configuration Release ./ShoppingSystem/
+      run: dotnet test --no-restore --no-build --logger 'junit;LogFilePath=.github/workflows/testresult.xml' --configuration Release ./ShoppingSystem/
       
     - name: Publish Unit Test Results
       uses: EnricoMi/publish-unit-test-result-action/composite@v1
